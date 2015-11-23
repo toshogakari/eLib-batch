@@ -4,9 +4,12 @@
 namespace App\Services;
 
 use App\ActiveResources\Rakuten;
+use GuzzleHttp\Client;
 
 class RakutenService
 {
+
+    private $entryUrl;
 
     /**
      * @return array
@@ -30,6 +33,28 @@ class RakutenService
             ->conditions($conditions)
             ->get()
             ->result();
+    }
+
+    /**
+     * @param array $book
+     * @return bool
+     */
+    public function entry(array $book)
+    {
+        try {
+            $client = new Client();
+            $response = $client->post($this->entryUrl, $book);
+            if ($response->getBody() === 'success') {
+                return true;
+            }
+        }
+        catch (\Exception $e) {
+            error_log(sprintf("%s\n%s",
+                $e->getMessage(),
+                $e->getTraceAsString()
+            ));
+        }
+        return false;
     }
 
     /**
@@ -61,6 +86,14 @@ class RakutenService
             return $ret;
         }
         return $ret['result'][0];
+    }
+
+    /**
+     * @param $url
+     */
+    public function setEntryUrl($url)
+    {
+        $this->entryUrl = $url;
     }
 
 }

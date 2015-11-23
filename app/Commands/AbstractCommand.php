@@ -33,6 +33,11 @@ abstract class AbstractCommand
     protected $helper;
 
     /**
+     * @var OutputInterface
+     */
+    protected $output;
+
+    /**
      * constructor
      * @param HelperSet $helper
      */
@@ -111,4 +116,13 @@ abstract class AbstractCommand
         $this->messages['option'] = $message;
         return $this;
     }
+
+    /**
+     * @param OutputInterface $output
+     */
+    protected function setOutput(OutputInterface $output)
+    {
+        $this->output = $output;
+    }
+
 }
