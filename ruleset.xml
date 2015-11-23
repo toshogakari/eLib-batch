@@ -1,0 +1,14 @@
+<ruleset name="Custom Standard">
+    <!-- ?> 閉じタグつけない  -->
+    <rule ref="PSR2.Files.ClosingTag"/>
+    <!-- クラス名は、StudlyCaps（単語の先頭文字を大文字で表記する記法）記法で定義 -->
+    <!-- Class names MUST be declared in StudlyCaps. -->
+    <rule ref="Squiz.Classes.ValidClassName"/>
+    <!-- BOM無し UTF-8 -->
+    <!-- PHP code MUST use only UTF-8 without BOM. -->
+    <rule ref="Generic.Files.ByteOrderMark"/>
+    <!-- タブインデント禁止 -->
+    <rule ref="Generic.WhiteSpace.DisallowTabIndent"/>
+    <!-- 改行コードチェック  LF(\n)であること。 -->
+    <rule ref="Generic.Files.LineEndings" />
+</ruleset>
