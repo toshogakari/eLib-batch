@@ -44,6 +44,7 @@ abstract class AbstractParser
             return !!preg_match($regex, $text);
         }
         foreach ($regex as $re) {
+            echo $re, $text, PHP_EOL;
             if (preg_match($re, $text)) {
                 return true;
             }

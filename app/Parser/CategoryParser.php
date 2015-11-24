@@ -16,12 +16,14 @@ class CategoryParser extends AbstractParser
             '/Rails/i'
         ],
         'C' => [
-            '/C(?!(++|#))/i',
+            '/C(?!(\+\+|#|SS))/i',
             '/C言語/i'
         ],
-        'C#'  => '/C#/i',
-        'C++' => '/C++/i',
-        'SQL' => '/SQL/i'
+        'C#'   => '/C#/i',
+        'C++'  => '/C\+\+/i',
+        'CSS'  => '/CSS/i',
+        'HTML' => '/HTML/i',
+        'SQL'  => '/SQL/i',
+        'Go'   => '/Go(?!(ogle))/i'
     ];
-
 }
