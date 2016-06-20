@@ -58,6 +58,9 @@ class RakutenCommand extends AbstractCommand
         }
     }
 
+    /**
+     * @param array $books
+     */
     private function entry(array $books)
     {
         foreach ($books as $book) {
